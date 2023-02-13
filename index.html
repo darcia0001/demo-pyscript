@@ -10,10 +10,21 @@
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
 
 </head>
- <py-env> 
+<py-env>
+    - numpy
+    - matplotlib
 </py-env>
 <body>
 
-    <py-repl id="my-repl" auto-generate=true> </py-repl>
+    <py-script>
+        import matplotlib.pyplot as plt
+        import numpy as np
+    
+        x_coordinates = np.random.randn(100)
+        y_coordinates = np.random.randn(100)
+        figure, axis = plt.subplots()
+        axis.scatter(x_coordinates ,y_coordinates)
+        figure
+    </py-script>
 </body>
 </html>
