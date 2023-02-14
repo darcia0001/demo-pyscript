@@ -30,7 +30,10 @@
             # GET
             headers = {"Content-type": "application/json", 'Access-Control-Allow-Origin': '*'}
             response = await request(f"{baseurl}", method="GET", headers=headers)
-            print(f"GET request=> status:{response.status}, json:{await response.json()}")
+            data=await response.json()
+            print(f"GET request=> status:{response.status}, json: {data} ")
+           
+            pyscript.write("response",  data)
 
            
 
@@ -49,5 +52,7 @@
         https://pyodide.org/en/stable/usage/api/python-api.html#pyodide.http.FetchResponse
         </p>
     </div>
+
+    <div style="width:100%;border:solid 1px red" id="response"> </div>
   </body>
 </html>
